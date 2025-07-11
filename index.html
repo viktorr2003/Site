@@ -26,6 +26,19 @@
         .btn-primary:hover {
             background-color: #004a55; /* Tom mais escuro para o hover */
         }
+        .btn-whatsapp {
+            background-color: #25D366; /* Cor verde do WhatsApp */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DA851; /* Tom mais escuro para o hover do WhatsApp */
+        }
         .card {
             background-color: white;
             border-radius: 0.75rem;
@@ -55,7 +68,7 @@
             object-fit: cover; /* Ensures image covers the area without distortion */
         }
         .logo {
-            height: 100px; /* Ajuste o tamanho da logo conforme necessário */
+            height: 100px; /* Ajustado para 80px para aumentar o tamanho */
             width: auto;
         }
         .text-v2r-primary {
@@ -71,7 +84,7 @@
     <nav class="header-bg p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo da V2R MIND -->
-            <img src="assets/Screenshot 2.png" alt="V2R Mind Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x40/003a44/ffffff?text=V2R+MIND+Logo';">
+            <img src="assets/v2r_mind_logo.svg" alt="V2R Mind Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x40/003a44/ffffff?text=V2R+MIND+Logo';">
             <div>
                 <button onclick="showPage('home')" class="btn-primary mr-4">Início</button>
                 <button onclick="showPage('plans')" class="btn-primary">Nossos Planos</button>
@@ -181,7 +194,9 @@
                     <li><span class="check-icon">&#10003;</span> Suporte por E-mail</li>
                     <li><span class="check-icon">&#10003;</span> Análise de Métricas Básicas (CPC, CTR)</li>
                 </ul>
-                <button class="btn-primary w-full">Contratar Plano Essencial</button>
+                <button onclick="contactWhatsApp('Plano Essencial')" class="btn-whatsapp w-full">
+                    Contratar via WhatsApp
+                </button>
             </div>
 
             <!-- Plano Avançado -->
@@ -196,7 +211,9 @@
                     <li><span class="check-icon">&#10003;</span> Análise de Métricas Avançadas (CAC, ROAS)</li>
                     <li><span class="check-icon">&#10003;</span> Reunião Mensal de Estratégia</li>
                 </ul>
-                <button class="btn-primary w-full">Contratar Plano Avançado</button>
+                <button onclick="contactWhatsApp('Plano Avançado')" class="btn-whatsapp w-full">
+                    Contratar via WhatsApp
+                </button>
             </div>
 
             <!-- Plano Premium -->
@@ -212,7 +229,9 @@
                     <li><span class="check-icon">&#10003;</span> Reuniões Estratégicas Quinzenais</li>
                     <li><span class="check-icon">&#10003;</span> Consultoria de Tagueamento (GTM, GA4)</li>
                 </ul>
-                <button class="btn-primary w-full">Contratar Plano Premium</button>
+                <button onclick="contactWhatsApp('Plano Premium')" class="btn-whatsapp w-full">
+                    Contratar via WhatsApp
+                </button>
             </div>
         </div>
     </div>
@@ -223,6 +242,11 @@
             <p class="mb-2">© 2025 V2R MIND. Todos os direitos reservados.</p>
             <p class="mb-2">Siga-nos: @V2R_Mind</p>
             <p class="mb-2">Contato: <a href="mailto:victorfu7@gmail.com" class="text-v2r-light hover:underline">victorfu7@gmail.com</a> | (11) 96925-3607</p>
+            <p class="mb-4">
+                <a href="javascript:void(0)" onclick="contactWhatsApp('')" class="btn-whatsapp">
+                    Entre em Contato via WhatsApp
+                </a>
+            </p>
             <p><a href="linktr.ee/victorfurtado" class="text-v2r-light hover:underline" target="_blank">linktr.ee/victorfurtado</a></p>
         </div>
     </footer>
@@ -238,6 +262,19 @@
                     page.classList.add('hidden');
                 }
             });
+        }
+
+        // Function to handle WhatsApp contact
+        function contactWhatsApp(planName = '') {
+            const phoneNumber = '5511969253607'; // Seu número de telefone com código do país (55) e DDD (11)
+            let message = 'Olá, V2R Mind! Gostaria de mais informações sobre seus serviços.';
+
+            if (planName) {
+                message = `Olá, V2R Mind! Tenho interesse no ${planName}. Poderíamos conversar?`;
+            }
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         }
 
         // Initially show the home page
