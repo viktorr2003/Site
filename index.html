@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V2R Mind - Performance que Gera Resultado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        /* Cores atualizadas para #003a44 e seus tons */
+        .header-bg, .footer-bg {
+            background-color: #003a44; /* Cor principal V2R Mind */
+        }
+        .btn-primary {
+            background-color: #005f6b; /* Um tom ligeiramente mais claro para o botão */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #004a55; /* Tom mais escuro para o hover */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        .plan-card {
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        /* Borda do plano avançado agora usa a cor principal */
+        .plan-card.highlighted {
+            border: 2px solid #003a44;
+        }
+        .check-icon {
+            color: #00798c; /* Um tom de verde-azulado para os checks, para contraste */
+        }
+        .section-image {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            object-fit: cover; /* Ensures image covers the area without distortion */
+        }
+        .logo {
+            height: 100px; /* Ajuste o tamanho da logo conforme necessário */
+            width: auto;
+        }
+        .text-v2r-primary {
+            color: #003a44; /* Nova cor primária para títulos e textos destacados */
+        }
+        .text-v2r-light {
+            color: #00798c; /* Um tom mais claro para links no footer, por exemplo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="header-bg p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo da V2R MIND -->
+            <img src="assets/Screenshot 2.png" alt="V2R Mind Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x40/003a44/ffffff?text=V2R+MIND+Logo';">
+            <div>
+                <button onclick="showPage('home')" class="btn-primary mr-4">Início</button>
+                <button onclick="showPage('plans')" class="btn-primary">Nossos Planos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page container mx-auto my-8 p-6 card">
+        <h1 class="text-4xl font-bold text-center mb-8 text-v2r-primary">Bem-vindo à V2R Mind</h1>
+
+        <!-- About Me Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 text-center text-v2r-primary">Sobre Mim</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <!-- Image for Sobre Mim -->
+                    <img src="assets/Screenshot.png" alt="Ilustração sobre mim" class="section-image">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">Sou especialista em performance e mídia paga, com foco em ROI e otimização de campanhas no Google Ads, Meta Ads e redes sociais. Tenho experiência em CRM com Salesforce Marketing Cloud, automação e personalização de campanhas.</p>
+                    <p>Possuo conhecimentos técnicos em Python, MySQL, HTML, CSS, JavaScript/TypeScript, além de tagueamento (GTM, GA4) e análise de dados. Atualmente, estou cursando Banco de Dados na UNICID e em constante evolução profissional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Focus Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 text-center text-v2r-primary">Qual Nosso Foco?</h2>
+            <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <!-- Image for Nosso Foco -->
+                    <img src="assets/22.png" alt="Ilustração sobre nosso foco" class="section-image">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">Na V2R Mind, performance não é promessa - é entrega. Somos especialistas em mídia paga, unindo estratégia, dados e automação para gerar resultados reais. Otimizamos campanhas em Google Ads, Meta Ads e redes sociais com foco total em ROI.</p>
+                    <p>Com inteligência analítica, tecnologia e ação precisa, transformamos métricas em crescimento. V2R Mind: onde a performance se traduz em resultado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas of Expertise Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 text-center text-v2r-primary">Ramos de Atuação</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <!-- Image for Soluções Práticas -->
+                    <img src="assets/33.jpeg" alt="Ilustração de soluções práticas" class="section-image">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Gestão de Tráfego Multiplataforma:</strong> Google Ads, Meta Ads e uma plataforma adicional.</li>
+                        <li><strong>Relatórios Personalizados e Dashboards:</strong> Visualização de dados via Looker Studio.</li>
+                        <li><strong>Consultoria em Tagueamento e Métricas:</strong> GTM, GA4 e eventos personalizados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Growth Section -->
+        <section>
+            <h2 class="text-3xl font-semibold mb-4 text-center text-v2r-primary">Média de Crescimento dos Nossos Clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-2xl font-bold mb-4">Cliente 1 - E-commerce de Moda</h3>
+                    <p class="mb-2"><strong>Cenário:</strong> Baixo ROI, alto CAC e conversões limitadas.</p>
+                    <p class="mb-4"><strong>Objetivo:</strong> Escalar resultados, reduzindo custos e aumentando a lucratividade.</p>
+                    <ul class="list-none space-y-2">
+                        <li><span class="check-icon">&#10003;</span> <strong>+79,3%</strong> Aumento de Faturamento</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+45,5%</strong> Melhoria da Taxa de Conversão</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+85,1%</strong> Elevação do ROAS</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>-40%</strong> Redução do CAC</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>-25,5%</strong> Redução do CPA</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+82,8%</strong> Aumento do Lucro Líquido</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-2xl font-bold mb-4">Cliente 2 - E-commerce de Eletrônicos</h3>
+                    <p class="mb-2"><strong>Cenário:</strong> Baixo ROI, alto CAC e conversões limitadas.</p>
+                    <p class="mb-4"><strong>Objetivo:</strong> Escalar resultados, reduzindo custos e aumentando a lucratividade.</p>
+                    <ul class="list-none space-y-2">
+                        <li><span class="check-icon">&#10003;</span> <strong>+27%</strong> Aumento de Faturamento</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+141%</strong> Melhoria da Taxa de Conversão</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+41,6%</strong> Elevação do ROAS</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>-21,9%</strong> Redução do CAC</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>-26,9%</strong> Redução do CPA</li>
+                        <li><span class="check-icon">&#10003;</span> <strong>+38,5%</strong> Aumento do Lucro Líquido</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Plans Page -->
+    <div id="plans-page" class="page container mx-auto my-8 p-6 card hidden">
+        <h1 class="text-4xl font-bold text-center mb-8 text-v2r-primary">Nossos Planos</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Plano Essencial -->
+            <div class="plan-card p-6 rounded-lg text-center">
+                <h2 class="text-3xl font-bold text-v2r-primary mb-4">PLANO ESSENCIAL</h2>
+                <p class="text-5xl font-extrabold mb-6">R$ 796,97</p>
+                <ul class="list-none text-left space-y-3 mb-8">
+                    <li><span class="check-icon">&#10003;</span> Gestão de 1 Plataforma (Google Ads ou Meta Ads)</li>
+                    <li><span class="check-icon">&#10003;</span> Otimização de Campanhas Existentes</li>
+                    <li><span class="check-icon">&#10003;</span> Relatórios Semanais Simplificados</li>
+                    <li><span class="check-icon">&#10003;</span> Suporte por E-mail</li>
+                    <li><span class="check-icon">&#10003;</span> Análise de Métricas Básicas (CPC, CTR)</li>
+                </ul>
+                <button class="btn-primary w-full">Contratar Plano Essencial</button>
+            </div>
+
+            <!-- Plano Avançado -->
+            <div class="plan-card p-6 rounded-lg text-center highlighted">
+                <h2 class="text-3xl font-bold text-v2r-primary mb-4">PLANO AVANÇADO</h2>
+                <p class="text-5xl font-extrabold mb-6">R$ 897,90</p>
+                <ul class="list-none text-left space-y-3 mb-8">
+                    <li><span class="check-icon">&#10003;</span> Gestão de 2 Plataformas (Google Ads e Meta Ads)</li>
+                    <li><span class="check-icon">&#10003;</span> Otimização e Criação de Novas Campanhas</li>
+                    <li><span class="check-icon">&#10003;</span> Relatórios Semanais Detalhados</li>
+                    <li><span class="check-icon">&#10003;</span> Suporte por E-mail e WhatsApp</li>
+                    <li><span class="check-icon">&#10003;</span> Análise de Métricas Avançadas (CAC, ROAS)</li>
+                    <li><span class="check-icon">&#10003;</span> Reunião Mensal de Estratégia</li>
+                </ul>
+                <button class="btn-primary w-full">Contratar Plano Avançado</button>
+            </div>
+
+            <!-- Plano Premium -->
+            <div class="plan-card p-6 rounded-lg text-center">
+                <h2 class="text-3xl font-bold text-v2r-primary mb-4">PLANO PREMIUM</h2>
+                <p class="text-5xl font-extrabold mb-6">R$ 1197,90</p>
+                <ul class="list-none text-left space-y-3 mb-8">
+                    <li><span class="check-icon">&#10003;</span> Gestão Multiplataforma (Google Ads, Meta Ads + 1 extra)</li>
+                    <li><span class="check-icon">&#10003;</span> Otimização Contínua e Testes A/B Avançados</li>
+                    <li><span class="check-icon">&#10003;</span> Relatórios Personalizados e Dashboards (Looker Studio)</li>
+                    <li><span class="check-icon">&#10003;</span> Suporte Prioritário (E-mail, WhatsApp, Chamada)</li>
+                    <li><span class="check-icon">&#10003;</span> Análise de Funil Completa e CRO</li>
+                    <li><span class="check-icon">&#10003;</span> Reuniões Estratégicas Quinzenais</li>
+                    <li><span class="check-icon">&#10003;</span> Consultoria de Tagueamento (GTM, GA4)</li>
+                </ul>
+                <button class="btn-primary w-full">Contratar Plano Premium</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white p-6 text-center mt-8">
+        <div class="container mx-auto">
+            <p class="mb-2">© 2025 V2R MIND. Todos os direitos reservados.</p>
+            <p class="mb-2">Siga-nos: @V2R_Mind</p>
+            <p class="mb-2">Contato: <a href="mailto:victorfu7@gmail.com" class="text-v2r-light hover:underline">victorfu7@gmail.com</a> | (11) 96925-3607</p>
+            <p><a href="linktr.ee/victorfurtado" class="text-v2r-light hover:underline" target="_blank">linktr.ee/victorfurtado</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to show/hide pages
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                if (page.id === `${pageId}-page`) {
+                    page.classList.remove('hidden');
+                } else {
+                    page.classList.add('hidden');
+                }
+            });
+        }
+
+        // Initially show the home page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
